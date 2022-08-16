@@ -1,0 +1,5 @@
+.background{
+    background: url(../src/assets/about.jpg) center center no-repeat;
+    background-size: cover;
+    height: 92vh;
+}
