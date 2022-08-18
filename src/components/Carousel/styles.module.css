@@ -1,0 +1,5 @@
+.content{
+    background: url(../../assets/teste.jpg) center center no-repeat;
+    background-size: cover;
+    height: 92vh;
+}

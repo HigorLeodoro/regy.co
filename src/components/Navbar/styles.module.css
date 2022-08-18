@@ -1,47 +1,65 @@
-.nav{
+.fixed{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 99;
+}
+.nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 8vh;
-    background: #23232e;
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.144);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.nav a{
+.nav a {
+    font-weight: bolder;
     text-decoration: none;
     color: #fff;
-    transition: 0.3s;
     text-transform: uppercase;
+    transition: 0.5s;
 }
 
-.nav a:hover{
+.nav a:hover {
+    font-size: 20px;
     opacity: 0.7;
 }
 
-.navList{
+.logo {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+.navList {
     list-style: none;
     display: flex;
 }
 
-.navList li{
+.navList li {
     letter-spacing: 3px;
     margin-left: 32px;
 }
 
-.mobileMenu{
+.mobileMenu {
     display: none;
     cursor: pointer;
 }
 
-.mobileMenu div{
+.mobileMenu div {
     width: 32px;
     height: 2px;
-    background: #fff;
+    background: #23232e;
     margin: 8px;
 }
 
 @media (max-width: 999px) {
 
-    .navList{
+    .navList {
         position: absolute;
         top: 8vh;
         right: 0;
@@ -54,16 +72,16 @@
         background: #23232e;
     }
 
-    .navList li{
+    .navList li {
         margin-left: 0;
         opacity: 0;
     }
 
-    .mobileMenu{
+    .mobileMenu {
         display: block;
     }
 
-    .navList.active{
+    .navList.active {
         transform: translateX(0);
     }
 }
