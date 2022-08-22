@@ -9,31 +9,26 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import styles from "./styles.module.css";
 
-import logo from "../../assets/logo.png";
-
-import Navbar from "../Navbar";
 
 export default function Home() {
-  const [windowSize, setWindowSize] = useState(getWindowSize());
+    const [windowSize, setWindowSize] = useState(getWindowSize());
 
-  useEffect(() => {
-    function handleWindowResize() {
-      setWindowSize(getWindowSize());
-    }
-
-    window.addEventListener("resize", handleWindowResize);
-
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
-
-  function getWindowSize() {
-    if (typeof window !== "undefined") {
+    useEffect(() => {
+      function handleWindowResize() {
+        setWindowSize(getWindowSize());
+      }
+  
+      window.addEventListener("resize", handleWindowResize);
+  
+      return () => {
+        window.removeEventListener("resize", handleWindowResize);
+      };
+    }, []);
+  
+    function getWindowSize() {
       const { innerWidth: width, innerHeight: height } = window;
       return { width, height };
     }
-  }
 
   return (
     <div>
@@ -54,8 +49,8 @@ export default function Home() {
         interval={6500}
         stopOnHover={false}
         showStatus={false}
+        renderIndicator={false}
       >
-        
         <main style={windowSize} className={styles.content}></main>
         <main style={windowSize} className={styles.content}></main>
       </Carousel>
